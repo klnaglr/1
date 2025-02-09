@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #666;
+            color: white;
+            position: absolute;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #d60000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.stockcake.com/public/a/7/7/a77794ec-b384-404a-b4e4-2405e50e0749_large/kawaii-pink-piglet-stockcake.jpg" alt="Cute Valentine Image">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="showMessage()">Yes</button>
+            <button class="btn no" onmouseover="moveButton(this)">No</button>
+        </div>
+        <p id="message">[Your custom message will appear here]</p>
+    </div>
+
+    <script>
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('message').innerText = "Yay! I love you so much! ❤️ You make my world brighter every day!";
+        }
+    </script>
+</body>
+</html>
